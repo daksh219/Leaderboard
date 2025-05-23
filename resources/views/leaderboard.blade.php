@@ -31,22 +31,23 @@
         <table class="leaderboard-table">
             <thead>
                 <tr>
-                    <th>Rank</th>
                     <th>User ID</th>
                     <th>Name</th>
                     <th>Total Points</th>
+                    <th>Rank</th>
                 </tr>
             </thead>
             <tbody>
                 @foreach ($leaderboards as $entry)
                     <tr class="{{ request('search') && request('search') == $entry->user->id ? 'highlighted' : '' }}">
+                        
+                        <td class="entry-id">{{ $entry->user->id }}</td>
+                        <td class="entry-name">{{ $entry->user->name }}</td>
+                        <td class="entry-points">{{ $entry->total_points }}</td>
                         <td
                             class="entry-rank">
                             {{ $entry->rank }}
                         </td>
-                        <td class="entry-id">{{ $entry->user->id }}</td>
-                        <td class="entry-name">{{ $entry->user->name }}</td>
-                        <td class="entry-points">{{ $entry->total_points }}</td>
                     </tr>
                 @endforeach
             </tbody>
