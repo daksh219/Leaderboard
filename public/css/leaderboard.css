@@ -1,0 +1,167 @@
+body {
+    background: black;
+}
+
+.filter-form,
+.recalculate-form {
+    margin-bottom: 20px;
+    display: flex;
+    gap: 10px;
+    flex-wrap: wrap;
+    align-items: center;
+}
+
+.filter-select,
+.search-input {
+    background: #1a1a1a;
+    border: 2px solid #333;
+    color: #fff;
+    padding: 10px 14px;
+    border-radius: 8px;
+    font-size: 16px;
+    transition: border-color 0.2s ease, background 0.2s ease;
+}
+
+.filter-select:hover,
+.search-input:hover,
+.filter-select:focus,
+.search-input:focus {
+    border-color: #555;
+    background: #222;
+    outline: none;
+}
+
+.search-btn,
+.recalculate-btn {
+    background: #2c2c2c;
+    color: #fff;
+    border: none;
+    padding: 12px 24px;
+    border-radius: 8px;
+    font-weight: 500;
+    font-size: 16px;
+    cursor: pointer;
+    transition: background 0.2s ease, transform 0.2s ease;
+}
+
+.search-btn:hover,
+.recalculate-btn:hover {
+    background: #3c3c3c;
+    transform: translateY(-1px);
+}
+
+/* Table styles */
+.leaderboard-table {
+    width: 100%;
+    border-collapse: separate;
+    border-spacing: 0;
+    background: #1a1a1a;
+    border-radius: 12px;
+    overflow: hidden;
+    color: #fff;
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto,
+        sans-serif;
+}
+
+.leaderboard-table thead {
+    background: #2c2c2c;
+}
+
+.leaderboard-table th,
+.leaderboard-table td {
+    padding: 16px 20px;
+    text-align: left;
+}
+
+.leaderboard-table th {
+    font-weight: 600;
+    font-size: 14px;
+    color: #cccccc;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+}
+
+.leaderboard-table td.entry-rank {
+    width: 60px;
+    text-align: center;
+    font-weight: 600;
+    color: #ffaa00;
+}
+
+.leaderboard-table td.entry-id {
+    width: 80px;
+    font-weight: 600;
+    color: #888;
+}
+
+.leaderboard-table td.entry-name {
+    font-weight: 500;
+}
+
+.leaderboard-table td.entry-points {
+    width: 120px;
+    text-align: center;
+    font-weight: 600;
+}
+
+.leaderboard-table tbody tr {
+    border-bottom: 1px solid #333;
+    cursor: pointer;
+    transition: background 0.2s ease;
+}
+
+.leaderboard-table tbody tr:hover {
+    background: #222;
+}
+
+.leaderboard-table tbody tr.highlighted {
+    background: #2a2a2a;
+    border: 2px solid #555;
+    border-radius: 8px;
+    margin: 4px 0;
+    display: table-row;
+}
+
+/* Rank colors */
+.leaderboard-table td.entry-rank.rank-1 {
+    color: #ffd700;
+}
+
+.leaderboard-table td.entry-rank.rank-2 {
+    color: #c0c0c0;
+}
+
+.leaderboard-table td.entry-rank.rank-3 {
+    color: #cd7f32;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+    .filter-form,
+    .recalculate-form {
+        flex-direction: column;
+        align-items: stretch;
+    }
+
+    .filter-select,
+    .search-input,
+    .search-btn,
+    .recalculate-btn {
+        width: 100%;
+        margin: 5px 0;
+    }
+
+    .leaderboard-table th,
+    .leaderboard-table td {
+        padding: 12px 10px;
+        font-size: 14px;
+    }
+
+    .leaderboard-table td.entry-rank {
+        width: 50px;
+    }
+
+    .leaderboard-table td.entry-points {
+        width: 80px;
+    }
+}
